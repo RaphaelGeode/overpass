@@ -14,7 +14,7 @@ def location(request):
         level = request.GET.get('level','')
 
     if(country and level):
-        result = osm_get_all_name(country, level)
+        result = osm_get_all_location(country, level)
         response = HttpResponse(json.dumps(result), content_type='application/json')
     else:
         context = {

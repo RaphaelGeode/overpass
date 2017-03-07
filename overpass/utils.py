@@ -3,7 +3,7 @@ import requests
 
 from django.contrib.gis.geos import Point, LinearRing, Polygon, MultiPolygon, GEOSGeometry
 
-def osm_get_all_name(country="België - Belgique - Belgien", lev=8):
+def osm_get_all_location(country="België - Belgique - Belgien", lev=8):
     url = 'http://overpass-api.de/api/interpreter'
     query = '[out:json];area[name="'+str(country)+'"];(rel[admin_level='+str(lev)+'][boundary=administrative](area););out;'
     payload = {'data':query}
